@@ -6,20 +6,20 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:41:00 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/10 11:31:33 by izperez          ###   ########.fr       */
+/*   Updated: 2025/04/14 10:31:53 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 Form::Form(const std::string& name, int canBeSigned, int canExecute)
-	: _name(name), _isSigned(false), _canbeSigned(canBeSigned), _canExecute(canExecute) {
+	: _name(name), _isSigned(false), _gradeToSigned(canBeSigned), _gradeToExecute(canExecute) {
 		std::cout << "Form constructor called!" << std::endl;
 }
 
 Form::Form(const Form& other)
 	: _name(other._name), _isSigned(other._isSigned), 
-		_canbeSigned(other._canbeSigned), _canExecute(other._canExecute) {
+		_gradeToSigned(other._gradeToSigned), _gradeToExecute(other._gradeToExecute) {
 	std::cout << "Form copy constructor called!" << std::endl;
 }
 
@@ -46,14 +46,14 @@ bool	Form::isSigned() const
 	return (_isSigned);
 }
 
-int Form::canBeSigned() const
+int Form::getGradeToSigned() const
 {
-	return (_canbeSigned);
+	return (_gradeToSigned);
 }
 
-int Form::canExecute() const
+int Form::getGradeToExecute() const
 {
-	return (_canExecute);
+	return (_gradeToExecute);
 }
 
 class Form::GradeTooHighException : public std::exception
@@ -73,7 +73,7 @@ class Form::GradeTooLowException : public std::exception
 };
 
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-	if (bureaucrat.getGrade() <= _canbeSigned) {
+	if (bureaucrat.getGrade() <= _gradeToSigned) {
 		_isSigned = true;
 	} else {
 		throw GradeTooLowException();
@@ -82,8 +82,8 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
 	os << "Form " << form.getName()
-		<< ", required grade to sign: " << form.canBeSigned()
-		<< ", required grade to execute: " << form.canExecute()
+		<< ", required grade to sign: " << form.getGradeToSigned()
+		<< ", required grade to execute: " << form.getGradeToExecute()
 		<< ", is signed: " << (form.isSigned() ? "Yes" : "No");
 	return os;
 }
