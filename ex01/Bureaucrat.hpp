@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:22:58 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/10 11:46:29 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:02:30 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Form;
 class Bureaucrat
 {
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string &name, int grade);
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat& other);
@@ -36,7 +37,7 @@ class Bureaucrat
 		void signForm(Form& form) const;
 		
 		
-		private:
+	private:
 		std::string _name;
 		int		_grade;
 	};

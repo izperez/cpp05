@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:22:58 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/08 10:43:09 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 10:37:42 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class Bureaucrat
 {
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string &name, int grade);
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat& other);

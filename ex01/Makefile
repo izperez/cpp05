@@ -6,11 +6,11 @@
 #    By: izperez <izperez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 11:18:59 by izperez           #+#    #+#              #
-#    Updated: 2025/04/08 12:09:34 by izperez          ###   ########.fr        #
+#    Updated: 2025/05/01 11:51:10 by izperez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = Form
 CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = main.cpp Bureaucrat.cpp Form.cpp

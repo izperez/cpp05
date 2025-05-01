@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:59:16 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/18 10:59:09 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 10:52:14 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ class Bureaucrat::GradeTooLowException : public std::exception
 	return "Grade is too low!";
 	}
 };
+
+Bureaucrat::Bureaucrat() : _name("Defualt")
+{
+	_grade = 150;
+	std::cout << "Defualt constructor called!" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name){
 	_grade = grade;

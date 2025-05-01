@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:02:14 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/18 11:06:34 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:53:32 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int main()
 		Bureaucrat mid("Charlie", 50);
 
 		ShrubberyCreationForm shrub("Home");
-		RobotomyRequestForm robot("Bender");
-		PresidentialPardonForm pardon("Rick");
+		RobotomyRequestForm robot("Shcool");
+		PresidentialPardonForm pardon("Job");
 
 		std::cout << "\n--- Intento de firma por el Interno (Bob) ---\n";
 		intern.signForm(shrub);

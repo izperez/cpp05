@@ -6,11 +6,11 @@
 #    By: izperez <izperez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 11:18:59 by izperez           #+#    #+#              #
-#    Updated: 2025/04/07 12:17:20 by izperez          ###   ########.fr        #
+#    Updated: 2025/05/01 11:51:01 by izperez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = Bureaucrat
 CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = main.cpp Bureaucrat.cpp 

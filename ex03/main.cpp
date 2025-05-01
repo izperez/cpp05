@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:02:14 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/22 11:23:50 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:42:33 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ int main()
 	AForm* form3 = Carlos.makeForm("presidential pardon", "Personal");
 	
 	AForm* invalidForm = Carlos.makeForm("invalid form", "Random");
+
+	Bureaucrat Jose("Jose", 1);
+
+
+	form1->beSigned(Jose);
+	form2->beSigned(Jose);
+	form3->beSigned(Jose);
+	
+	form1->execute(Jose);
+	form2->execute(Jose);
+	form3->execute(Jose);
 
 	delete form1;
 	delete form2;

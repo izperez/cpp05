@@ -6,16 +6,20 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:18:57 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/08 10:37:00 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:13:31 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
 
-int main() {
+int main()
+{
 	try {
 		Bureaucrat Pepita("Pepita", 1);
+		Bureaucrat juanita;
+		juanita = Pepita;
+		std::cout << "name " << juanita << std::endl;
 		std::cout << Pepita << std::endl;
 		Pepita.incrementGrade(); //TooHighException
 	} catch (std::exception& e) {

@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:40:55 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/14 10:29:29 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 10:47:47 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Bureaucrat;
 class Form
 {
 	public:
+		Form();
 		Form(const std::string& name, int canBeSigned, int canExecute);
-		//Form();
 		~Form();
 		Form(const Form& other);
 		Form& operator=(const Form& other);

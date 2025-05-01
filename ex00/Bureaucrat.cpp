@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 09:59:16 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/08 10:31:36 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:10:51 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ class Bureaucrat::GradeTooHighException : public std::exception
 {
 	public:
 	const char* what() const throw() {
-	return "Grade is to high!";
+		return "Grade is to high!";
 	}
 };
 
@@ -24,13 +24,19 @@ class Bureaucrat::GradeTooLowException : public std::exception
 {
 	public:
 	const char* what() const throw() {
-	return "Grade is too low!";
+		return "Grade is too low!";
 	}
 };
 
+Bureaucrat::Bureaucrat() : _name("default")
+{
+	_grade = 1;
+	std::cout << "Default constructor called" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name){
 	_grade = grade;
-	std::cout << "Constructor called!" << std::endl;
+	std::cout << _name << " Constructor called!" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){

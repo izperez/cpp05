@@ -6,15 +6,35 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:02:26 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/17 10:39:19 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:23:22 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : _target("default")
+{
+	std::cout << "Default constructor called!" << std::endl;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout << "\033[32m" << "RobotomyRequestForm Constructor called!" << "\033[0m" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+: AForm(other), _target(other._target)
+{
+	std::cout << "Copy constructor called!" << std::endl;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+{
+	if (this != &other) {
+		AForm::operator=(other);
+		this->_target = other._target;
+	}
+	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -29,8 +49,13 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	if (executor.getGrade() > getGradeToExecute())
 		throw AForm::GradeTooLowException();
 
+	srand(time(NULL));
+
 	if (rand() % 2)
 		std::cout << _target << " has been robotomized succesfully!" << std::endl;
+	else
+		std::cout << _target << " hasn't been robotomized!" << std::endl;
+
 	
 }
 

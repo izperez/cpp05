@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:02:29 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/16 10:36:03 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:08:25 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 class RobotomyRequestForm : public AForm
 {
 	public:
+		RobotomyRequestForm();
+		RobotomyRequestForm(const RobotomyRequestForm& other);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 		RobotomyRequestForm(const std::string &target);
 		~RobotomyRequestForm();
 		void execute(const Bureaucrat &executor) const;

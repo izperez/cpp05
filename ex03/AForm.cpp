@@ -6,12 +6,17 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:41:00 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/25 11:17:11 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:22:56 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
+AForm::AForm() : _name("Default"), _gradeToSigned(0), _gradeToExecute(0)
+{
+	_isSigned = false;
+	std::cout << "Default constructor called!" << std::endl;
+}
 AForm::AForm(const std::string& name, int canBeSigned, int canExecute)
 	: _name(name), _isSigned(false), _gradeToSigned(canBeSigned), _gradeToExecute(canExecute) {
 		std::cout << "AForm constructor called for: " << _name << std::endl;
@@ -28,7 +33,7 @@ AForm::AForm(const AForm& other)
 }
 
 AForm& AForm::operator=(const AForm& other) {
-	if (this != &other) { // Protección contra autoasignación
+	if (this != &other) {
 		return (*this);
 	}
 	std::cout << "AForm copy assignment operator called!" << std::endl;

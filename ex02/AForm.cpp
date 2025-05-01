@@ -6,11 +6,20 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:41:00 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/25 11:16:35 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:36:53 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+
+
+
+AForm::AForm() : _name("Default"), _gradeToSigned(0), _gradeToExecute(0)
+{
+	_isSigned = false;
+	std::cout << "Default constructor called!" << std::endl;
+}
 
 AForm::AForm(const std::string& name, int canBeSigned, int canExecute)
 	: _name(name), _isSigned(false), _gradeToSigned(canBeSigned), _gradeToExecute(canExecute) {

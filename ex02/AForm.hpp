@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:40:55 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/25 11:16:52 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:12:42 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Bureaucrat;
 class AForm
 {
 	public:
+		AForm();
 		AForm(const std::string& name, int canBeSigned, int canExecute);
 		virtual ~AForm();
 		AForm(const AForm& other);
@@ -34,15 +35,15 @@ class AForm
 			return "Grade is to high!";
 			}
 		};
-
+		
 		class GradeTooLowException : public std::exception
 		{
-			
 			public:
 			const char* what() const throw() {
-				return "Grade is too low!";
+			return "Grade is too low!";
 			}
 		};
+		
 		std::string getName() const;
 		bool isSigned() const;
 		int getGradeToSigned() const;
@@ -60,14 +61,3 @@ class AForm
 	std::ostream& operator<<(std::ostream& os, const AForm& AForm);
 
 #endif
-
-/* **** Clase abstracta ****
- * No se puede instanciar
- * Contiene al menos un método virtual puro
- * Se utiliza como base para clases derivadas que implementan los métodos.
- */
-
-/* **** Clase no abstracta ****
- * Se puede instanciar
- * Puede contener métodos implementados y se utiliza tanto como base como clase independiente.
- */

@@ -6,11 +6,11 @@
 #    By: izperez <izperez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/10 11:02:16 by izperez           #+#    #+#              #
-#    Updated: 2025/04/16 10:04:14 by izperez          ###   ########.fr        #
+#    Updated: 2025/05/01 11:51:21 by izperez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = AForm
 CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp

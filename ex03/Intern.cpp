@@ -6,7 +6,7 @@
 /*   By: izperez <izperez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:53:12 by izperez           #+#    #+#             */
-/*   Updated: 2025/04/22 11:25:51 by izperez          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:18:54 by izperez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Intern::Intern()
 {
 	std::cout << "\033[32m" << "Intern Constructor called!" << "\033[0m" << std::endl;
 }
+
+Intern::Intern(const Intern& other)
+{
+	std::cout << "Copy constructor called!" << std::endl;
+}
+
+Intern& Intern::operator=(const Intern& other)
+{
+	(void) other;
+	return *this;
+}
+
 
 Intern::~Intern()
 {
